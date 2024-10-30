@@ -9,40 +9,37 @@ Features:
 - Easy-to-use web interface
 - Secure API key handling
 
-How to Set Up:
-1. Clone this repository to your computer:
+Quick Setup:
+1. Clone this repository:
    git clone https://github.com/Reenamjot/boblol.git
    cd boblol
 
-2. Install required packages:
-   pip install streamlit openai python-dotenv requests pillow
+2. Install all requirements:
+   pip install -r requirements.txt
 
 3. Set up your API key:
    - Copy .env.example to a new file named .env
    - Add your OpenAI API key to the .env file
-   - Never share your .env file!
 
 4. Run the app:
    streamlit run App_UI.py
 
 How to Use:
 1. Open the app in your web browser
-2. Type your driving scenario or question in the text box
+2. Type your driving scenario or question
 3. Click "Generate Report and Images"
-4. View your personalized driving report and AI-generated images
+4. View your report and AI-generated images
 
-Files in this Project:
+Files Included:
 - App_UI.py: Main application interface
-- App_Pic.py: Handles image generation
-- .env: Stores your API key (you need to create this)
-- .env.example: Shows what should go in your .env file
-- README.md: This file
+- App_Pic.py: Image generation handler
+- requirements.txt: List of required packages
+- .env.example: Template for API key setup
+- README.md: This guide
 
 Requirements:
-- Python 3.8 or higher
+- Python 3.8+
 - OpenAI API key
 - Internet connection
-- Required Python packages (listed in setup instructions)
 
-Created by: [Your Name]
-Last Updated: [Current Date]
+
