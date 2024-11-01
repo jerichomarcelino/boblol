@@ -1,0 +1,33 @@
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+
+# Set up synthetic data parameters
+np.random.seed(42)  # for reproducibility
+
+# Define the size of the dataset
+num_records = 1000
+
+# Generate synthetic data
+data = {
+    "IncidentID": range(1, num_records + 1),
+    "Date": [datetime(2023, 1, 1) + timedelta(days=int(np.random.uniform(0, 365))) for _ in range(num_records)],
+    "Time": [f"{np.random.randint(0, 24):02}:{np.random.randint(0, 60):02}" for _ in range(num_records)],
+    "Location": np.random.choice(["Highway", "Residential Area", "Downtown", "Rural Road"], num_records),
+    "Age": np.random.choice(range(16, 80), num_records),
+    "Fatalities": np.random.poisson(0.5, num_records),  # most incidents have 0-1 fatalities
+    "Injuries": np.random.poisson(1, num_records),
+    "Weather": np.random.choice(["Clear", "Rain", "Snow", "Fog"], num_records),
+    "Speeding": np.random.choice(["Yes", "No"], num_records, p=[0.3, 0.7]),
+    "Seatbelt": np.random.choice(["Yes", "No"], num_records, p=[0.8, 0.2]),
+    "Distraction": np.random.choice(["Phone", "Passenger", "Other", "None"], num_records),
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Save DataFrame to CSV
+csv_path = "/mnt/data/synthetic_traffic_fatalities.csv"
+df.to_csv(csv_path, index=False)
+
+csv_path
